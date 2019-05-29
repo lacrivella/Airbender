@@ -21,7 +21,14 @@ class App extends Component {
         characterApi.getCharacters()
             .then(characters => {
                 characterList.update({ characters });
+            })
+            .finally(() => {
+                loading.update({ done: true });
             });
+
+        const loading = new Loading({ done: false });
+        const loadingDOM = loading.render();
+        main.appendChild(loadingDOM);
 
         return dom;
     }
