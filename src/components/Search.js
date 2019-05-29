@@ -1,9 +1,9 @@
-import Component from './Component.js';
+// import Component from './Component.js';
 
-class Search extends Component {
-    render() {
-        function
-    }
-}
+// class Search extends Component {
+//     render() {
+//         function
+//     }
+// }
 
-export default Search;
+// export default Search;

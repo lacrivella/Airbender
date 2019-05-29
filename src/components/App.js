@@ -18,17 +18,32 @@ class App extends Component {
         const characterList = new CharacterList({ characters: [] });
         main.appendChild(characterList.render());
 
-        characterApi.getCharacters()
-            .then(characters => {
-                characterList.update({ characters });
-            })
-            .finally(() => {
-                loading.update({ done: true });
-            });
-
         const loading = new Loading({ done: false });
         const loadingDOM = loading.render();
         main.appendChild(loadingDOM);
+
+        function loadEnemies() {
+            const params = window.location.hash.slice(1);
+    
+            const searchParams = new URLSearchParams(params);
+            const enemies = searchParams.get('enemies');
+    
+            // loading.update({ loading: false });
+
+            characterApi.getCharacters(enemies)
+                .then(characters => {
+                    characterList.update({ characters });
+                })
+                .finally(() => {
+                    loading.update({ done: true });
+                });
+        }
+
+        loadEnemies();
+        
+        window.addEventListener('hashchange', () => {
+            loadEnemies();
+        });
 
         return dom;
     }
