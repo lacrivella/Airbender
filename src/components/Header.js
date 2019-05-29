@@ -5,6 +5,7 @@ class Header extends Component {
         return /*html*/ `
             <header>
                 <h1>Avatar Characters</h1>
+                <a href="./">Show All</a>
             </header>
         `;
     }

@@ -22,15 +22,12 @@ class App extends Component {
         const loadingDOM = loading.render();
         main.appendChild(loadingDOM);
 
-        function loadEnemies() {
+        function loadCharacters() {
             const params = window.location.hash.slice(1);
-    
-            const searchParams = new URLSearchParams(params);
-            const enemies = searchParams.get('enemies');
-    
-            // loading.update({ loading: false });
 
-            characterApi.getCharacters(enemies)
+            loading.update({ loading: false });
+
+            characterApi.getCharacters(params)
                 .then(characters => {
                     characterList.update({ characters });
                 })
@@ -39,10 +36,10 @@ class App extends Component {
                 });
         }
 
-        loadEnemies();
+        loadCharacters();
         
         window.addEventListener('hashchange', () => {
-            loadEnemies();
+            loadCharacters();
         });
 
         return dom;
