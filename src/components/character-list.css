@@ -1,9 +1,11 @@
 ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 h2 {
-    font-family: 'Bilbo', cursive;
-    font-size: 2em;
+    font-family: 'Amatic SC', cursive;
+    font-size: 1.7em;
+    text-align: center;
 }

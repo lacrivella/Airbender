@@ -2,6 +2,7 @@ import Component from './Component.js';
 import Header from './Header.js';
 import CharacterList from './CharacterList.js';
 import characterApi from '../services/characters-api.js';
+import Loading from './Loading.js';
 
 class App extends Component {
 

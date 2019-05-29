@@ -4,9 +4,12 @@ li {
     width: 250px;
     border: 1px solid black;
     margin-right: 5px;
+    margin-top: 5px;
     text-align: center;
+    background-color: linen;
 }
 
 img {
     width: 250px;
+    height: 200px;
 }

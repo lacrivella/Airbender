@@ -1,5 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Bilbo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Permanent+Marker&display=swap');
+
+body {
+    font-family: 'Amatic SC', cursive;
+    background-color: rgb(255, 254, 232);
+}
 
 h1{
-    font-family: 'Berkshire Swash', cursive;
+    font-family: 'Permanent Marker', cursive;
+    color: #DE673F;
+    text-align: center;
+    font-size: 3em;
 }
