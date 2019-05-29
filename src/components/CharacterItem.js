@@ -8,6 +8,8 @@ class CharacterItem extends Component {
             <li>
                 <h2>${character.name}</h2>
                 <img src="${src}" alt="${character.name}">
+                <a href="">Enemies</a>
+                <a href="">Allies</a>
             </li>
         `;
     }
