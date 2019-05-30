@@ -18,17 +18,29 @@ class App extends Component {
         const characterList = new CharacterList({ characters: [] });
         main.appendChild(characterList.render());
 
-        characterApi.getCharacters()
-            .then(characters => {
-                characterList.update({ characters });
-            })
-            .finally(() => {
-                loading.update({ done: true });
-            });
-
         const loading = new Loading({ done: false });
         const loadingDOM = loading.render();
         main.appendChild(loadingDOM);
+
+        function loadCharacters() {
+            const params = window.location.hash.slice(1);
+
+            loading.update({ loading: false });
+
+            characterApi.getCharacters(params)
+                .then(characters => {
+                    characterList.update({ characters });
+                })
+                .finally(() => {
+                    loading.update({ done: true });
+                });
+        }
+
+        loadCharacters();
+        
+        window.addEventListener('hashchange', () => {
+            loadCharacters();
+        });
 
         return dom;
     }
